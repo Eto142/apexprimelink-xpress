@@ -9,10 +9,10 @@
 <div style="max-width: 620px; margin: auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
 
     <!-- Header -->
-    <div style="background: #003366; padding: 20px; text-align: center;">
+    <div style="background: #1B4332; padding: 20px; text-align: center;">
         <img
             src="{{ asset('wp-content/uploads/2022/04/Screenshot_20231009_092214-150x150.png') }}"
-            alt="Swift Delivery Courier"
+            alt="Apex Prime LX"
             width="140"
             style="display:block; margin:auto;"
         >
@@ -42,9 +42,9 @@
     </div>
 
     <!-- Tracking Number -->
-    <div style="margin: 16px 28px; background: #f0f5ff; border-left: 4px solid #003366; padding: 12px 18px; border-radius: 4px;">
+    <div style="margin: 16px 28px; background: #f0f5ff; border-left: 4px solid #1B4332; padding: 12px 18px; border-radius: 4px;">
         <p style="margin:0; font-size:12px; color:#888; text-transform:uppercase; letter-spacing:1px;">Tracking Number</p>
-        <p style="margin:5px 0 0; font-size:20px; font-weight:800; color:#003366; letter-spacing:1.5px;">
+        <p style="margin:5px 0 0; font-size:20px; font-weight:800; color:#1B4332; letter-spacing:1.5px;">
             {{ $shipment->tracking_number }}
         </p>
     </div>
@@ -53,7 +53,7 @@
     <div style="padding: 10px 28px 20px;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
             <tr>
-                <td colspan="2" style="background:#003366; color:#fff; padding:8px 12px; font-weight:700; font-size:13px; border-radius:3px;">
+                <td colspan="2" style="background:#1B4332; color:#fff; padding:8px 12px; font-weight:700; font-size:13px; border-radius:3px;">
                     Latest Update
                 </td>
             </tr>
@@ -82,7 +82,7 @@
             <!-- Shipment Route -->
             <tr><td colspan="2" style="padding:14px 0 4px;">&nbsp;</td></tr>
             <tr>
-                <td colspan="2" style="background:#003366; color:#fff; padding:8px 12px; font-weight:700; font-size:13px; border-radius:3px;">
+                <td colspan="2" style="background:#1B4332; color:#fff; padding:8px 12px; font-weight:700; font-size:13px; border-radius:3px;">
                     Shipment Info
                 </td>
             </tr>
@@ -107,7 +107,7 @@
     <div style="padding: 0 28px 28px; text-align:center;">
         <p style="color:#888; font-size:13px; margin-bottom:16px;">Track your shipment anytime using the link below:</p>
         <a href="{{ url('/track-now') }}"
-           style="display:inline-block; background:#003366; color:#ffffff; padding:13px 32px; border-radius:6px; text-decoration:none; font-weight:700; font-size:15px; letter-spacing:.3px;">
+           style="display:inline-block; background:#1B4332; color:#ffffff; padding:13px 32px; border-radius:6px; text-decoration:none; font-weight:700; font-size:15px; letter-spacing:.3px;">
             Track Shipment →
         </a>
     </div>

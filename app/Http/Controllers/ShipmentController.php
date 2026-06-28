@@ -128,8 +128,12 @@ public function downloadPdf($awb)
         abort(404, 'PDF not found');
     }
 
-    // Serve the PDF for download
-    return response()->download(storage_path('app/public/' . $filePath), 'awb_' . $awb . '.pdf');
+    // Serve the PDF for download (explicit content-type avoids finfo MIME detection)
+    return response()->download(
+        storage_path('app/public/' . $filePath),
+        'awb_' . $awb . '.pdf',
+        ['Content-Type' => 'application/pdf']
+    );
 }
 
 

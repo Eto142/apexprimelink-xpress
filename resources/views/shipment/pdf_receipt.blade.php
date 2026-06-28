@@ -7,15 +7,15 @@
         body { font-family: Arial, sans-serif; font-size: 11px; color: #333; margin: 20px; }
         .header { text-align: center; margin-bottom: 20px; }
         .logo { max-width: 140px; margin-bottom: 10px; }
-        h2 { margin: 5px 0; color: #003366; font-size: 18px; }
+        h2 { margin: 5px 0; color: #1B4332; font-size: 18px; }
         .section { margin-bottom: 15px; }
-        h4 { margin: 0 0 8px 0; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 3px; font-size: 12px; }
+        h4 { margin: 0 0 8px 0; color: #1B4332; border-bottom: 2px solid #1B4332; padding-bottom: 3px; font-size: 12px; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
         th, td { border: 1px solid #ddd; padding: 6px; text-align: left; }
         th { background-color: #f7f7f7; width: 30%; font-weight: bold; }
         .footer { margin-top: 30px; font-size: 9px; text-align: center; color: #666; border-top: 1px solid #eee; padding-top: 10px; }
-        .tracking-box { background: #f0f4f8; padding: 10px; border: 1px dashed #003366; text-align: center; margin-bottom: 20px; }
-        .tracking-no { font-size: 16px; font-weight: bold; color: #003366; }
+        .tracking-box { background: #f0f4f8; padding: 10px; border: 1px dashed #1B4332; text-align: center; margin-bottom: 20px; }
+        .tracking-no { font-size: 16px; font-weight: bold; color: #1B4332; }
     </style>
 </head>
 <body>

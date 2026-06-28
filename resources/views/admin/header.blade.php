@@ -465,7 +465,7 @@
         .status-pending { background: #f1f5f9; color: #475569; }
         .status-processing { background: #dbeafe; color: #1e40af; }
         .status-transit { background: #eff6ff; color: #3b82f6; }
-        .status-delivered { background: #003366; color: #ffffff; }
+        .status-delivered { background: #1B4332; color: #ffffff; }
 
         .action-buttons {
             display: flex;

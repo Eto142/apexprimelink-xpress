@@ -9,7 +9,7 @@
         <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
 
             <!-- Header with Logo Only -->
-<div style="background: #003366; padding: 20px; text-align: center;">
+<div style="background: #1B4332; padding: 20px; text-align: center;">
    <img 
   src="{{ asset('wp-content/uploads/2022/04/Screenshot_20231009_092214-150x150.png') }}"
   alt="apexprimelink-xpress Official Logo"
