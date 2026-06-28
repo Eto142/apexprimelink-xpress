@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <style>
     :root {
-        --brand:       #B01E16;
-        --brand-dark:  #8C1510;
+        --brand:       #1B4332;
+        --brand-dark:  #14532D;
         --brand-light: #FEF2F1;
-        --ink:         #1A1A2E;
+        --ink:         #1B4332;
         --muted:       #64748B;
     }
 
@@ -112,7 +112,7 @@
     }
     .tn-title em {
         font-style: normal;
-        color: #FF7B72;
+        color: #1B4332;
     }
 
     .tn-sub {
