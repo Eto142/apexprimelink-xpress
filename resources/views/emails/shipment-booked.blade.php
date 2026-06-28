@@ -1,266 +1,152 @@
+```blade
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipment Booking Confirmation</title>
 </head>
-<body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;color:#333333;">
+<body style="font-family: Arial, sans-serif; background:#f4f4f4; margin:0; padding:0;">
 
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;padding:30px 15px;">
-<tr>
-<td align="center">
+<div style="width:100%; padding:30px 0;">
+    <div style="max-width:600px; margin:auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.05);">
 
-<table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #dddddd;">
-
-    <!-- Header -->
-    <tr>
-        <td style="padding:25px;text-align:center;border-bottom:1px solid #eeeeee;">
-
+        <!-- Header -->
+        <div style="background:#1B4332; padding:20px; text-align:center;">
             <img
                 src="https://apexprimelink-xpress.com/wp-content/uploads/2022/04/Screenshot_20231009_092214-150x150.png"
-                width="90"
-                alt="Apex Prime LX">
+                alt="Apex Prime LX"
+                width="150"
+                style="display:block;margin:auto;">
+        </div>
 
-            <h2 style="margin:15px 0 5px;color:#222;font-weight:600;">
-                Shipment Booking Confirmation
-            </h2>
+        <!-- Body -->
+        <div style="padding:30px; color:#555; font-size:15px; line-height:1.8;">
 
-            <p style="margin:0;color:#666;font-size:14px;">
-                Apex Prime LX Logistics
-            </p>
-
-        </td>
-    </tr>
-
-    <!-- Greeting -->
-    <tr>
-        <td style="padding:30px;">
-
-            <p style="margin-top:0;">
-                Hello
+            <p>
+                Dear
                 <strong>
-                    {{ $recipientType == 'sender' ? $shipment->shipper_name : $shipment->receiver_name }}
+                    {{ $recipientType === 'sender' ? $shipment->shipper_name : $shipment->receiver_name }}
                 </strong>,
             </p>
 
-            @if($recipientType == 'sender')
-                <p>
-                    Thank you for shipping with Apex Prime LX.
-                    Your shipment has been successfully booked.
-                </p>
+            @if($recipientType === 'sender')
+                <p>Your shipment has been successfully booked.</p>
             @else
-                <p>
-                    A shipment addressed to you has been booked and is currently being processed.
-                </p>
+                <p>A shipment has been booked and is on its way to you.</p>
             @endif
 
-        </td>
-    </tr>
+            <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;">
 
-    <!-- Tracking -->
-    <tr>
-        <td style="padding:0 30px 20px;">
+            <p><strong>Tracking Number</strong><br>
+            {{ $shipment->tracking_number }}</p>
 
-            <table width="100%" cellpadding="12" cellspacing="0" style="border:1px solid #dddddd;background:#fafafa;">
-                <tr>
-                    <td>
+            <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;">
 
-                        <div style="font-size:13px;color:#777;">
-                            Tracking Number
-                        </div>
+            <p><strong>Shipment Details</strong></p>
 
-                        <div style="font-size:26px;font-weight:bold;color:#222;margin-top:5px;">
-                            {{ $shipment->tracking_number }}
-                        </div>
+            <p>
+                <strong>Origin:</strong> {{ $shipment->origin }}<br>
 
-                    </td>
-                </tr>
-            </table>
-
-        </td>
-    </tr>
-
-    <!-- Shipment -->
-    <tr>
-        <td style="padding:0 30px;">
-
-            <h3 style="margin-bottom:10px;font-size:16px;">
-                Shipment Details
-            </h3>
-
-            <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
-
-                <tr>
-                    <td width="35%" style="border:1px solid #eee;"><strong>Origin</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->origin }}</td>
-                </tr>
-
-                <tr>
-                    <td style="border:1px solid #eee;"><strong>Destination</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->destination }}</td>
-                </tr>
+                <strong>Destination:</strong> {{ $shipment->destination }}<br>
 
                 @if($shipment->expected_delivery_date)
-                <tr>
-                    <td style="border:1px solid #eee;"><strong>Expected Delivery</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->expected_delivery_date }}</td>
-                </tr>
+                <strong>Expected Delivery:</strong> {{ $shipment->expected_delivery_date }}<br>
                 @endif
 
                 @if($shipment->carrier)
-                <tr>
-                    <td style="border:1px solid #eee;"><strong>Carrier</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->carrier }}</td>
-                </tr>
+                <strong>Carrier:</strong> {{ $shipment->carrier }}<br>
                 @endif
 
                 @if($shipment->shipment_mode)
-                <tr>
-                    <td style="border:1px solid #eee;"><strong>Shipment Mode</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->shipment_mode }}</td>
-                </tr>
+                <strong>Shipment Mode:</strong> {{ $shipment->shipment_mode }}<br>
                 @endif
 
                 @if($shipment->product)
-                <tr>
-                    <td style="border:1px solid #eee;"><strong>Package</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->product }}</td>
-                </tr>
+                <strong>Package:</strong> {{ $shipment->product }}<br>
                 @endif
 
-                <tr>
-                    <td style="border:1px solid #eee;"><strong>Status</strong></td>
-                    <td style="border:1px solid #eee;">{{ $shipment->status }}</td>
-                </tr>
-
-            </table>
-
-        </td>
-    </tr>
-
-    <!-- Sender -->
-    <tr>
-        <td style="padding:30px 30px 10px;">
-
-            <h3 style="margin-bottom:10px;font-size:16px;">
-                Sender
-            </h3>
-
-            @php
-                $shipperAddr = trim(
-                    $shipment->shipper_address .
-                    ($shipment->shipper_city ? ', '.$shipment->shipper_city : '') .
-                    ($shipment->shipper_country ? ', '.$shipment->shipper_country : '')
-                );
-            @endphp
-
-            <table width="100%" cellpadding="8" cellspacing="0">
-
-                <tr>
-                    <td width="35%"><strong>Name</strong></td>
-                    <td>{{ $shipment->shipper_name }}</td>
-                </tr>
-
-                <tr>
-                    <td><strong>Address</strong></td>
-                    <td>{{ $shipperAddr }}</td>
-                </tr>
-
-                @if($shipment->shipper_phone)
-                <tr>
-                    <td><strong>Phone</strong></td>
-                    <td>{{ $shipment->shipper_phone }}</td>
-                </tr>
-                @endif
-
-            </table>
-
-        </td>
-    </tr>
-
-    <!-- Receiver -->
-    <tr>
-        <td style="padding:10px 30px 30px;">
-
-            <h3 style="margin-bottom:10px;font-size:16px;">
-                Receiver
-            </h3>
-
-            @php
-                $receiverAddr = trim(
-                    $shipment->receiver_address .
-                    ($shipment->receiver_city ? ', '.$shipment->receiver_city : '') .
-                    ($shipment->receiver_country ? ', '.$shipment->receiver_country : '')
-                );
-            @endphp
-
-            <table width="100%" cellpadding="8" cellspacing="0">
-
-                <tr>
-                    <td width="35%"><strong>Name</strong></td>
-                    <td>{{ $shipment->receiver_name }}</td>
-                </tr>
-
-                <tr>
-                    <td><strong>Address</strong></td>
-                    <td>{{ $receiverAddr }}</td>
-                </tr>
-
-            </table>
-
-        </td>
-    </tr>
-
-    <!-- Tracking Link -->
-    <tr>
-        <td style="padding:0 30px 30px;">
-
-            <p>
-                You can track this shipment anytime using the following link:
+                <strong>Status:</strong> {{ $shipment->status }}
             </p>
 
-            <p style="word-break:break-all;">
+            <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;">
+
+            <p><strong>Sender</strong></p>
+
+            <p>
+                {{ $shipment->shipper_name }}<br>
+
+                {{ $shipment->shipper_address }}
+
+                @if($shipment->shipper_city)
+                    , {{ $shipment->shipper_city }}
+                @endif
+
+                @if($shipment->shipper_country)
+                    , {{ $shipment->shipper_country }}
+                @endif
+
+                @if($shipment->shipper_phone)
+                    <br>{{ $shipment->shipper_phone }}
+                @endif
+            </p>
+
+            <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;">
+
+            <p><strong>Receiver</strong></p>
+
+            <p>
+                {{ $shipment->receiver_name }}<br>
+
+                {{ $shipment->receiver_address }}
+
+                @if($shipment->receiver_city)
+                    , {{ $shipment->receiver_city }}
+                @endif
+
+                @if($shipment->receiver_country)
+                    , {{ $shipment->receiver_country }}
+                @endif
+            </p>
+
+            <hr style="border:none;border-top:1px solid #e5e5e5;margin:25px 0;">
+
+            <p>
+                You can track your shipment anytime by visiting:
+            </p>
+
+            <p>
                 <a href="{{ url('/track-now') }}">
                     {{ url('/track-now') }}
                 </a>
             </p>
 
             <p>
-                Tracking Number:
+                Or search using your tracking number:
                 <strong>{{ $shipment->tracking_number }}</strong>
             </p>
 
-        </td>
-    </tr>
+            <p>
+                Thank you for choosing <strong>Apex Prime LX</strong>.
+            </p>
 
-    <!-- Footer -->
-    <tr>
-        <td style="padding:25px;text-align:center;background:#fafafa;border-top:1px solid #eeeeee;font-size:13px;color:#777;">
+        </div>
 
-            <strong>Apex Prime LX Logistics</strong><br>
+        <!-- Footer -->
+        <div style="background:#f8f8f8; padding:18px; text-align:center; font-size:12px; color:#777;">
 
-            Email:
-            support@apexprimelink-xpress.com
+            Apex Prime LX Logistics<br>
 
-            <br><br>
+            support@apexprimelink-xpress.com<br>
 
-            Website:<br>
+            https://apexprimelink-xpress.com<br><br>
 
-            https://apexprimelink-xpress.com
+            &copy; {{ date('Y') }} Apex Prime LX. All rights reserved.
 
-            <br><br>
+        </div>
 
-            © {{ date('Y') }} Apex Prime LX. All rights reserved.
-
-        </td>
-    </tr>
-
-</table>
-
-</td>
-</tr>
-</table>
+    </div>
+</div>
 
 </body>
 </html>
+```
