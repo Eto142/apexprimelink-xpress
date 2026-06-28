@@ -48,7 +48,7 @@
 }
 .filter-card .form-control:focus,
 .filter-card .form-select:focus {
-    border-color: #0B3D91;
+    border-color: #1B5E20;
     box-shadow: 0 0 0 3px rgba(11,61,145,.1);
 }
 
@@ -72,8 +72,8 @@
 .table-header h5 { font-weight: 700; margin: 0; font-size: 1rem; color: #1a202c; }
 .table-count {
     font-size: .78rem;
-    background: #eff6ff;
-    color: #0B3D91;
+    background: #f0faf3;
+    color: #1B5E20;
     font-weight: 600;
     padding: 4px 12px;
     border-radius: 20px;
@@ -103,8 +103,8 @@
     font-family: 'Courier New', monospace;
     font-weight: 700;
     font-size: .78rem;
-    color: #0B3D91;
-    background: #eff6ff;
+    color: #1B5E20;
+    background: #f0faf3;
     padding: 3px 9px;
     border-radius: 6px;
     white-space: nowrap;
@@ -217,7 +217,7 @@
     {{-- Table --}}
     <div class="table-card">
         <div class="table-header">
-            <h5><i class="bi bi-table me-2" style="color:#0B3D91;"></i>Shipment Records</h5>
+            <h5><i class="bi bi-table me-2" style="color:#1B5E20;"></i>Shipment Records</h5>
             <span class="table-count">
                 Showing {{ $shipments->firstItem() ?? 0 }}–{{ $shipments->lastItem() ?? 0 }} of {{ $shipments->total() }}
             </span>

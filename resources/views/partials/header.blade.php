@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-US">
 
 <head>
@@ -63,7 +63,7 @@ iframe.goog-te-banner-frame { display: none !important; height: 0 !important; }
 #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
 
 
-/* â”€â”€ Custom Language Switcher Bar â”€â”€ */
+/* ── Custom Language Switcher Bar ── */
 #ot-lang-bar {
     background: #ffffff;
     padding: 5px 16px;
@@ -91,8 +91,8 @@ iframe.goog-te-banner-frame { display: none !important; height: 0 !important; }
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1;
 }
-#ot-lang-btn:hover { background: rgba(26,46,90,0.08); border-color: #1a2e5a; color: #1a2e5a; }
-#ot-lang-btn .ot-globe { color: #1a2e5a; font-size: 13px; }
+#ot-lang-btn:hover { background: rgba(27,67,50,0.08); border-color: #1B4332; color: #1B4332; }
+#ot-lang-btn .ot-globe { color: #1B4332; font-size: 13px; }
 #ot-lang-btn .ot-chevron { font-size: 9px; opacity: 0.5; transition: transform 0.2s; }
 #ot-lang-bar.open #ot-lang-btn .ot-chevron { transform: rotate(180deg); }
 #ot-lang-dropdown {
@@ -110,11 +110,11 @@ iframe.goog-te-banner-frame { display: none !important; height: 0 !important; }
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #1a2e5a #f0f0f0;
+    scrollbar-color: #1B4332 #f0f0f0;
 }
 #ot-lang-dropdown::-webkit-scrollbar { width: 5px; }
 #ot-lang-dropdown::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 0 10px 10px 0; }
-#ot-lang-dropdown::-webkit-scrollbar-thumb { background: #1a2e5a; border-radius: 4px; }
+#ot-lang-dropdown::-webkit-scrollbar-thumb { background: #1B4332; border-radius: 4px; }
 #ot-lang-bar.open #ot-lang-dropdown { display: block; }
 #ot-lang-dropdown a {
     display: flex;
@@ -129,7 +129,7 @@ iframe.goog-te-banner-frame { display: none !important; height: 0 !important; }
     border-bottom: 1px solid #f0f0f0;
 }
 #ot-lang-dropdown a:last-child { border-bottom: none; }
-#ot-lang-dropdown a:hover, #ot-lang-dropdown a.ot-active { background: rgba(26,46,90,0.08); color: #1a2e5a; }
+#ot-lang-dropdown a:hover, #ot-lang-dropdown a.ot-active { background: rgba(27,67,50,0.08); color: #1B4332; }
 #ot-lang-dropdown a .ot-flag { font-size: 17px; line-height: 1; flex-shrink: 0; }
 
 /* Keep raw Google Translate widget invisible but functional */
@@ -158,144 +158,299 @@ window.smartsupp||(function(d) {
 
 <body class="home page-template page-template-elementor_header_footer page page-id-6 wp-custom-logo elementor-default elementor-template-full-width elementor-kit-12 elementor-page elementor-page-6">
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-<!-- ═════════════════════ PRELOADER ═════════════════════ -->
+<!-- ══════════════════════════════════════
+<!-- --------------------- PRELOADER --------------------- -->
 <style>
-/* Preloader base */
-#ot-preloader{
-  position:fixed;inset:0;
-  background:#f8faff;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  z-index:99999;
-  transition:opacity .7s ease;
+/* ── Preloader shell ── */
+#ot-preloader {
+  position: fixed; inset: 0; z-index: 99999;
+  background: linear-gradient(155deg, #061710 0%, #0D2B1E 45%, #091f15 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+  transition: opacity .75s ease;
 }
-body.ot-loading{overflow:hidden;}
-#ot-preloader.ot-gone{opacity:0;pointer-events:none;}
+body.ot-loading { overflow: hidden; }
+#ot-preloader.ot-gone { opacity: 0; pointer-events: none; }
 
-/* Floating particles */
-.ot-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
-.ot-p{
-  position:absolute;bottom:-10px;width:10px;height:10px;
-  border:2px solid rgba(26,46,90,.10);border-radius:50%;
-  animation:otFloat linear infinite;
-}
-@keyframes otFloat{
-  0%  {transform:translateY(0) rotate(0deg);opacity:.7;}
-  100%{transform:translateY(-105vh) rotate(210deg);opacity:0;}
+/* Grid overlay */
+#ot-preloader::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
 }
 
-/* Logo */
-.ot-pre-logo{margin-bottom:28px;animation:otFadeDown .8s cubic-bezier(.22,1,.36,1) forwards;}
-.ot-pre-logo img{width:220px;display:block;}
-@keyframes otFadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+/* Ambient glow orb */
+#ot-preloader::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27,67,50,.35) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-/* Ring */
-.ot-ring-wrap{
-  position:relative;width:150px;height:150px;
-  margin-bottom:24px;
-  animation:otFadeUp .8s .1s cubic-bezier(.22,1,.36,1) both;
+/* ── Logo ── */
+.otp-logo {
+  margin-bottom: 36px;
+  animation: otpDown .75s cubic-bezier(.22,1,.36,1) both;
 }
-.ot-ring-svg{position:absolute;inset:0;transform:rotate(-90deg);}
-.ot-ring-track{fill:none;stroke:#e4eaf5;stroke-width:6;}
-.ot-ring-fill{
-  fill:none;stroke:#1a2e5a;stroke-width:6;stroke-linecap:round;
-  stroke-dasharray:408.41;stroke-dashoffset:408.41;
-  transition:stroke-dashoffset .18s linear;
-  filter:drop-shadow(0 0 6px rgba(26,46,90,.35));
-}
-.ot-ring-inner{
-  position:absolute;inset:14px;background:#f8faff;border-radius:50%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:inset 0 2px 12px rgba(26,46,90,.06);
-}
-.ot-ring-icon{font-size:30px;color:#1a2e5a;animation:otSpin 8s linear infinite;}
-@keyframes otSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.ot-ring-pct{font-size:12px;font-weight:700;color:#1a2e5a;letter-spacing:1px;margin-top:5px;font-family:'Rajdhani','Segoe UI',sans-serif;}
+.otp-logo img { height: 56px; display: block; filter: brightness(1.15) drop-shadow(0 2px 12px rgba(244,163,6,.25)); }
 
-/* Tagline */
-.ot-pre-tag{
-  font-family:'Rajdhani','Segoe UI',sans-serif;font-size:11px;letter-spacing:3.5px;
-  text-transform:uppercase;color:rgba(26,46,90,.4);
-  display:flex;align-items:center;gap:1px;
-  animation:otFadeUp .8s .25s cubic-bezier(.22,1,.36,1) both;
+/* ── Route track ── */
+.otp-route {
+  position: relative;
+  width: min(440px, 88vw);
+  height: 88px;
+  margin-bottom: 28px;
+  animation: otpUp .75s .12s cubic-bezier(.22,1,.36,1) both;
 }
-.ot-pre-tag span{color:#1a2e5a;font-size:14px;animation:otDot 1.5s infinite;}
-.ot-pre-tag span:nth-child(2){animation-delay:.22s;}
-.ot-pre-tag span:nth-child(3){animation-delay:.44s;}
-@keyframes otDot{0%,80%,100%{opacity:.2;transform:translateY(0);}40%{opacity:1;transform:translateY(-4px);}}
-@keyframes otFadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.otp-route svg { width: 100%; height: 100%; overflow: visible; }
+
+/* dashed background arc */
+.otp-arc-bg {
+  fill: none; stroke: rgba(255,255,255,.1);
+  stroke-width: 1.5; stroke-dasharray: 5 6;
+}
+/* animated amber fill arc */
+.otp-arc-fill {
+  fill: none; stroke: #f4a306; stroke-width: 2.5; stroke-linecap: round;
+  stroke-dasharray: 320; stroke-dashoffset: 320;
+  filter: drop-shadow(0 0 5px rgba(244,163,6,.7));
+  transition: stroke-dashoffset .08s linear;
+}
+
+/* City dots */
+.otp-city {
+  position: absolute; top: 50%;
+  width: 10px; height: 10px; margin-top: 10px;
+  background: rgba(255,255,255,.9); border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.2);
+  transform: translateX(-50%);
+}
+.otp-city-a { left: 0; }
+.otp-city-b { left: 100%; }
+.otp-city-b.lit {
+  background: #f4a306;
+  box-shadow: 0 0 0 4px rgba(244,163,6,.25), 0 0 16px rgba(244,163,6,.6);
+  animation: otpPulse 1.1s ease-in-out infinite;
+}
+@keyframes otpPulse {
+  0%,100% { box-shadow: 0 0 0 4px rgba(244,163,6,.25), 0 0 16px rgba(244,163,6,.6); }
+  50%      { box-shadow: 0 0 0 9px rgba(244,163,6,.08), 0 0 28px rgba(244,163,6,.35); }
+}
+
+/* City labels */
+.otp-city-label {
+  position: absolute; bottom: -20px;
+  font-family: 'Rajdhani','Segoe UI',sans-serif;
+  font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(255,255,255,.35); white-space: nowrap;
+}
+.otp-city-a .otp-city-label { left: 0; transform: translateX(-50%); }
+.otp-city-b .otp-city-label { right: 0; transform: translateX(50%); }
+
+/* Plane icon travelling the arc */
+.otp-plane-icon {
+  position: absolute; top: 0; left: 0;
+  font-size: 18px; color: #fff;
+  transform-origin: center center;
+  pointer-events: none;
+  text-shadow: 0 0 12px rgba(255,255,255,.6);
+  transition: none;
+}
+
+/* ── Tracking ID ── */
+.otp-tracking {
+  font-family: 'Courier New', monospace;
+  font-size: 11px; letter-spacing: 3px;
+  color: rgba(244,163,6,.55);
+  margin-bottom: 10px;
+  animation: otpUp .75s .2s cubic-bezier(.22,1,.36,1) both;
+}
+
+/* ── Status line ── */
+.otp-status {
+  font-family: 'Rajdhani','Segoe UI',sans-serif;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 22px; min-height: 15px;
+  animation: otpUp .75s .24s cubic-bezier(.22,1,.36,1) both;
+}
+
+/* ── Progress bar ── */
+.otp-bar-wrap {
+  width: min(300px, 80vw); height: 2px;
+  background: rgba(255,255,255,.08); border-radius: 2px;
+  overflow: hidden;
+  animation: otpUp .75s .3s cubic-bezier(.22,1,.36,1) both;
+}
+.otp-bar-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #1B4332 0%, #2E7D32 50%, #f4a306 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(244,163,6,.4);
+  transition: width .08s linear;
+}
+
+/* ── Scan line ── */
+.otp-scanline {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(27,67,50,.04) 3px,
+    rgba(27,67,50,.04) 4px
+  );
+  animation: otpScan 8s linear infinite;
+  opacity: .5;
+}
+@keyframes otpScan { from { background-position: 0 0; } to { background-position: 0 200px; } }
+
+/* ── Keyframes ── */
+@keyframes otpDown { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes otpUp   { from { opacity:0; transform:translateY(18px); }  to { opacity:1; transform:translateY(0); } }
 </style>
 
 <div id="ot-preloader">
-  <div class="ot-particles">
-    <div class="ot-p" style="left:5%;animation-duration:7s;animation-delay:0s;width:8px;height:8px;"></div>
-    <div class="ot-p" style="left:18%;animation-duration:9s;animation-delay:1.2s;width:12px;height:12px;"></div>
-    <div class="ot-p" style="left:33%;animation-duration:6s;animation-delay:0.5s;"></div>
-    <div class="ot-p" style="left:50%;animation-duration:11s;animation-delay:0.3s;width:14px;height:14px;border-color:rgba(26,46,90,.06);"></div>
-    <div class="ot-p" style="left:67%;animation-duration:8s;animation-delay:2s;width:7px;height:7px;"></div>
-    <div class="ot-p" style="left:80%;animation-duration:7.5s;animation-delay:1.8s;"></div>
-    <div class="ot-p" style="left:92%;animation-duration:9.5s;animation-delay:0.8s;width:9px;height:9px;"></div>
+  <div class="otp-scanline"></div>
+
+  <div class="otp-logo">
+    <img src="/wp-content/uploads/2022/04/Screenshot_20231009_092214-removebg-preview.png" alt="ApexPrimeLink-Xpress">
   </div>
 
-  <div class="ot-pre-logo">
-    <img src="/wp-content/uploads/2022/04/Screenshot_20231009_092214-removebg-preview.png" alt="apexprimelink-xpress">
-  </div>
-
-  <div class="ot-ring-wrap">
-    <svg class="ot-ring-svg" viewBox="0 0 150 150">
-      <circle class="ot-ring-track" cx="75" cy="75" r="65"/>
-      <circle class="ot-ring-fill" id="ot-ring-fill" cx="75" cy="75" r="65"/>
+  <div class="otp-route" id="otpRoute">
+    <svg id="otpSvg" viewBox="0 0 440 88" preserveAspectRatio="none">
+      <path class="otp-arc-bg"  d="M10,72 Q220,-18 430,72"/>
+      <path class="otp-arc-fill" id="otpArcFill" d="M10,72 Q220,-18 430,72"/>
     </svg>
-    <div class="ot-ring-inner">
-      <i class="fas fa-globe ot-ring-icon"></i>
-      <div class="ot-ring-pct" id="ot-pct">0%</div>
-    </div>
+    <span class="otp-city otp-city-a">
+      <span class="otp-city-label">Origin</span>
+    </span>
+    <span class="otp-city otp-city-b" id="otpCityB">
+      <span class="otp-city-label">Destination</span>
+    </span>
+    <i class="fas fa-plane otp-plane-icon" id="otpPlane"></i>
   </div>
 
-  <p class="ot-pre-tag">Delivering your world<span>.</span><span>.</span><span>.</span></p>
+  <div class="otp-tracking" id="otpTrackId">APX-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div>
+  <div class="otp-status"  id="otpStatus">Initializing&hellip;</div>
+
+  <div class="otp-bar-wrap">
+    <div class="otp-bar-fill" id="otpBar"></div>
+  </div>
 </div>
 
 <script>
-(function(){
+(function () {
   document.body.classList.add('ot-loading');
-  var el    = document.getElementById('ot-preloader');
-  var ring  = document.getElementById('ot-ring-fill');
-  var pctEl = document.getElementById('ot-pct');
-  var circ  = 2 * Math.PI * 65;
-  var pct   = 0;
 
-  function setProgress(p){
-    if(p > 100) p = 100;
-    pct = p;
-    ring.style.strokeDasharray  = circ;
-    ring.style.strokeDashoffset = circ * (1 - p / 100);
-    pctEl.textContent = Math.round(p) + '%';
+  var el       = document.getElementById('ot-preloader');
+  var arcFill  = document.getElementById('otpArcFill');
+  var planeEl  = document.getElementById('otpPlane');
+  var barEl    = document.getElementById('otpBar');
+  var statusEl = document.getElementById('otpStatus');
+  var trackEl  = document.getElementById('otpTrackId');
+  var cityB    = document.getElementById('otpCityB');
+  var routeEl  = document.getElementById('otpRoute');
+
+  var ARC_LEN  = 320;
+  var msgs = [
+    'Initializing\u2026',
+    'Connecting network\u2026',
+    'Loading cargo manifest\u2026',
+    'Verifying shipments\u2026',
+    'Syncing live tracking\u2026',
+    'Almost there\u2026'
+  ];
+
+  /* Random tracking ID */
+  var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789';
+  var tid = 'APX-';
+  for (var i = 0; i < 10; i++) tid += chars[Math.floor(Math.random() * chars.length)];
+  trackEl.textContent = tid;
+
+  /* Quadratic bezier at parameter t (viewBox 440×88) */
+  function bezier(t) {
+    var p0x=10,p0y=72, p1x=220,p1y=-18, p2x=430,p2y=72;
+    var mt = 1 - t;
+    return {
+      x:  mt*mt*p0x + 2*mt*t*p1x + t*t*p2x,
+      y:  mt*mt*p0y + 2*mt*t*p1y + t*t*p2y,
+      dx: 2*mt*(p1x-p0x) + 2*t*(p2x-p1x),
+      dy: 2*mt*(p1y-p0y) + 2*t*(p2y-p1y)
+    };
+  }
+
+  function setProgress(p) {
+    if (p > 100) p = 100;
+    var t   = p / 100;
+
+    /* Arc fill */
+    arcFill.style.strokeDashoffset = ARC_LEN * (1 - t);
+
+    /* Bar */
+    barEl.style.width = p + '%';
+
+    /* Plane position */
+    var rect  = routeEl.getBoundingClientRect();
+    var scaleX = rect.width  / 440;
+    var scaleY = rect.height / 88;
+    var b = bezier(t);
+    var px = b.x * scaleX;
+    var py = b.y * scaleY;
+    var angle = Math.atan2(b.dy * scaleY, b.dx * scaleX) * 180 / Math.PI;
+    planeEl.style.left      = px + 'px';
+    planeEl.style.top       = py + 'px';
+    planeEl.style.transform = 'translate(-50%,-50%) rotate(' + angle + 'deg)';
+
+    /* Status message */
+    var idx = Math.min(Math.floor(p / 18), msgs.length - 1);
+    statusEl.textContent = msgs[idx];
+
+    /* Light up destination */
+    if (p >= 97) cityB.classList.add('lit');
   }
 
   setProgress(0);
 
-  var interval = setInterval(function(){
-    setProgress(pct + Math.random() * 10 + 3);
-    if(pct >= 95){ clearInterval(interval); }
-  }, 130);
+  /* Smooth eased animation via rAF */
+  var start = null;
+  var DURATION = 2600;
 
-  function dismiss(){
-    clearInterval(interval);
+  function ease(t) { return t < .5 ? 2*t*t : -1 + (4 - 2*t)*t; }
+
+  function tick(ts) {
+    if (!start) start = ts;
+    var raw = (ts - start) / DURATION;
+    var p   = ease(Math.min(raw, 1)) * 96;
+    setProgress(p);
+    if (raw < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  function dismiss() {
     setProgress(100);
-    setTimeout(function(){
+    statusEl.textContent = 'Ready.';
+    setTimeout(function () {
       el.classList.add('ot-gone');
       document.body.classList.remove('ot-loading');
-      setTimeout(function(){ el.style.display = 'none'; }, 750);
-    }, 350);
+      setTimeout(function () { el.style.display = 'none'; }, 800);
+    }, 380);
   }
 
   window.addEventListener('load', dismiss);
-  setTimeout(dismiss, 4000);
+  setTimeout(dismiss, 4500);
 })();
 </script>
-<!-- ═════════════════════ END PRELOADER ═════════════════════ -->
+<!-- --------------------- END PRELOADER --------------------- -->
 
-<!-- â”€â”€ Language Switcher Bar â”€â”€ -->
+<!-- ── Language Switcher Bar ── -->
 <div id="ot-lang-bar">
     <button id="ot-lang-btn" aria-label="Select Language">
         <i class="fas fa-globe ot-globe"></i>
@@ -303,139 +458,139 @@ body.ot-loading{overflow:hidden;}
         <i class="fas fa-chevron-down ot-chevron"></i>
     </button>
     <div id="ot-lang-dropdown">
-        <a href="#" data-lang="en" class="ot-active"><span class="ot-flag">ðŸ‡¬ðŸ‡§</span>English</a>
-        <a href="#" data-lang="af"><span class="ot-flag">ðŸ‡¿ðŸ‡¦</span>Afrikaans</a>
-        <a href="#" data-lang="sq"><span class="ot-flag">ðŸ‡¦ðŸ‡±</span>Albanian</a>
-        <a href="#" data-lang="am"><span class="ot-flag">ðŸ‡ªðŸ‡¹</span>Amharic</a>
-        <a href="#" data-lang="ar"><span class="ot-flag">ðŸ‡¸ðŸ‡¦</span>Arabic</a>
-        <a href="#" data-lang="hy"><span class="ot-flag">ðŸ‡¦ðŸ‡²</span>Armenian</a>
-        <a href="#" data-lang="as"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Assamese</a>
-        <a href="#" data-lang="ay"><span class="ot-flag">ðŸ‡§ðŸ‡´</span>Aymara</a>
-        <a href="#" data-lang="az"><span class="ot-flag">ðŸ‡¦ðŸ‡¿</span>Azerbaijani</a>
-        <a href="#" data-lang="bm"><span class="ot-flag">ðŸ‡²ðŸ‡±</span>Bambara</a>
-        <a href="#" data-lang="eu"><span class="ot-flag">ðŸ´</span>Basque</a>
-        <a href="#" data-lang="be"><span class="ot-flag">ðŸ‡§ðŸ‡¾</span>Belarusian</a>
-        <a href="#" data-lang="bn"><span class="ot-flag">ðŸ‡§ðŸ‡©</span>Bengali</a>
-        <a href="#" data-lang="bho"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Bhojpuri</a>
-        <a href="#" data-lang="bs"><span class="ot-flag">ðŸ‡§ðŸ‡¦</span>Bosnian</a>
-        <a href="#" data-lang="bg"><span class="ot-flag">ðŸ‡§ðŸ‡¬</span>Bulgarian</a>
-        <a href="#" data-lang="ca"><span class="ot-flag">ðŸ´</span>Catalan</a>
-        <a href="#" data-lang="ceb"><span class="ot-flag">ðŸ‡µðŸ‡­</span>Cebuano</a>
-        <a href="#" data-lang="ny"><span class="ot-flag">ðŸ‡²ðŸ‡¼</span>Chichewa</a>
-        <a href="#" data-lang="zh-CN"><span class="ot-flag">ðŸ‡¨ðŸ‡³</span>Chinese (Simplified)</a>
-        <a href="#" data-lang="zh-TW"><span class="ot-flag">ðŸ‡¹ðŸ‡¼</span>Chinese (Traditional)</a>
-        <a href="#" data-lang="co"><span class="ot-flag">ðŸ‡«ðŸ‡·</span>Corsican</a>
-        <a href="#" data-lang="hr"><span class="ot-flag">ðŸ‡­ðŸ‡·</span>Croatian</a>
-        <a href="#" data-lang="cs"><span class="ot-flag">ðŸ‡¨ðŸ‡¿</span>Czech</a>
-        <a href="#" data-lang="da"><span class="ot-flag">ðŸ‡©ðŸ‡°</span>Danish</a>
-        <a href="#" data-lang="dv"><span class="ot-flag">ðŸ‡²ðŸ‡»</span>Dhivehi</a>
-        <a href="#" data-lang="doi"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Dogri</a>
-        <a href="#" data-lang="nl"><span class="ot-flag">ðŸ‡³ðŸ‡±</span>Dutch</a>
-        <a href="#" data-lang="eo"><span class="ot-flag">ðŸŒ</span>Esperanto</a>
-        <a href="#" data-lang="et"><span class="ot-flag">ðŸ‡ªðŸ‡ª</span>Estonian</a>
-        <a href="#" data-lang="ee"><span class="ot-flag">ðŸ‡¬ðŸ‡­</span>Ewe</a>
-        <a href="#" data-lang="tl"><span class="ot-flag">ðŸ‡µðŸ‡­</span>Filipino</a>
-        <a href="#" data-lang="fi"><span class="ot-flag">ðŸ‡«ðŸ‡®</span>Finnish</a>
-        <a href="#" data-lang="fr"><span class="ot-flag">ðŸ‡«ðŸ‡·</span>French</a>
-        <a href="#" data-lang="fy"><span class="ot-flag">ðŸ‡³ðŸ‡±</span>Frisian</a>
-        <a href="#" data-lang="gl"><span class="ot-flag">ðŸ‡ªðŸ‡¸</span>Galician</a>
-        <a href="#" data-lang="ka"><span class="ot-flag">ðŸ‡¬ðŸ‡ª</span>Georgian</a>
-        <a href="#" data-lang="de"><span class="ot-flag">ðŸ‡©ðŸ‡ª</span>German</a>
-        <a href="#" data-lang="el"><span class="ot-flag">ðŸ‡¬ðŸ‡·</span>Greek</a>
-        <a href="#" data-lang="gn"><span class="ot-flag">ðŸ‡µðŸ‡¾</span>Guarani</a>
-        <a href="#" data-lang="gu"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Gujarati</a>
-        <a href="#" data-lang="ht"><span class="ot-flag">ðŸ‡­ðŸ‡¹</span>Haitian Creole</a>
-        <a href="#" data-lang="ha"><span class="ot-flag">ðŸ‡³ðŸ‡¬</span>Hausa</a>
-        <a href="#" data-lang="haw"><span class="ot-flag">ðŸ‡ºðŸ‡¸</span>Hawaiian</a>
-        <a href="#" data-lang="iw"><span class="ot-flag">ðŸ‡®ðŸ‡±</span>Hebrew</a>
-        <a href="#" data-lang="hi"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Hindi</a>
-        <a href="#" data-lang="hmn"><span class="ot-flag">ðŸŒ</span>Hmong</a>
-        <a href="#" data-lang="hu"><span class="ot-flag">ðŸ‡­ðŸ‡º</span>Hungarian</a>
-        <a href="#" data-lang="is"><span class="ot-flag">ðŸ‡®ðŸ‡¸</span>Icelandic</a>
-        <a href="#" data-lang="ig"><span class="ot-flag">ðŸ‡³ðŸ‡¬</span>Igbo</a>
-        <a href="#" data-lang="ilo"><span class="ot-flag">ðŸ‡µðŸ‡­</span>Ilocano</a>
-        <a href="#" data-lang="id"><span class="ot-flag">ðŸ‡®ðŸ‡©</span>Indonesian</a>
-        <a href="#" data-lang="ga"><span class="ot-flag">ðŸ‡®ðŸ‡ª</span>Irish</a>
-        <a href="#" data-lang="it"><span class="ot-flag">ðŸ‡®ðŸ‡¹</span>Italian</a>
-        <a href="#" data-lang="ja"><span class="ot-flag">ðŸ‡¯ðŸ‡µ</span>Japanese</a>
-        <a href="#" data-lang="jw"><span class="ot-flag">ðŸ‡®ðŸ‡©</span>Javanese</a>
-        <a href="#" data-lang="kn"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Kannada</a>
-        <a href="#" data-lang="kk"><span class="ot-flag">ðŸ‡°ðŸ‡¿</span>Kazakh</a>
-        <a href="#" data-lang="km"><span class="ot-flag">ðŸ‡°ðŸ‡­</span>Khmer</a>
-        <a href="#" data-lang="rw"><span class="ot-flag">ðŸ‡·ðŸ‡¼</span>Kinyarwanda</a>
-        <a href="#" data-lang="gom"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Konkani</a>
-        <a href="#" data-lang="ko"><span class="ot-flag">ðŸ‡°ðŸ‡·</span>Korean</a>
-        <a href="#" data-lang="kri"><span class="ot-flag">ðŸ‡¸ðŸ‡±</span>Krio</a>
-        <a href="#" data-lang="ku"><span class="ot-flag">ðŸŒ</span>Kurdish (Kurmanji)</a>
-        <a href="#" data-lang="ckb"><span class="ot-flag">ðŸŒ</span>Kurdish (Sorani)</a>
-        <a href="#" data-lang="ky"><span class="ot-flag">ðŸ‡°ðŸ‡¬</span>Kyrgyz</a>
-        <a href="#" data-lang="lo"><span class="ot-flag">ðŸ‡±ðŸ‡¦</span>Lao</a>
-        <a href="#" data-lang="la"><span class="ot-flag">ðŸŒ</span>Latin</a>
-        <a href="#" data-lang="lv"><span class="ot-flag">ðŸ‡±ðŸ‡»</span>Latvian</a>
-        <a href="#" data-lang="ln"><span class="ot-flag">ðŸ‡¨ðŸ‡©</span>Lingala</a>
-        <a href="#" data-lang="lt"><span class="ot-flag">ðŸ‡±ðŸ‡¹</span>Lithuanian</a>
-        <a href="#" data-lang="lg"><span class="ot-flag">ðŸ‡ºðŸ‡¬</span>Luganda</a>
-        <a href="#" data-lang="lb"><span class="ot-flag">ðŸ‡±ðŸ‡º</span>Luxembourgish</a>
-        <a href="#" data-lang="mk"><span class="ot-flag">ðŸ‡²ðŸ‡°</span>Macedonian</a>
-        <a href="#" data-lang="mai"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Maithili</a>
-        <a href="#" data-lang="mg"><span class="ot-flag">ðŸ‡²ðŸ‡¬</span>Malagasy</a>
-        <a href="#" data-lang="ms"><span class="ot-flag">ðŸ‡²ðŸ‡¾</span>Malay</a>
-        <a href="#" data-lang="ml"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Malayalam</a>
-        <a href="#" data-lang="mt"><span class="ot-flag">ðŸ‡²ðŸ‡¹</span>Maltese</a>
-        <a href="#" data-lang="mi"><span class="ot-flag">ðŸ‡³ðŸ‡¿</span>Maori</a>
-        <a href="#" data-lang="mr"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Marathi</a>
-        <a href="#" data-lang="mni-Mtei"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Meitei (Manipuri)</a>
-        <a href="#" data-lang="lus"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Mizo</a>
-        <a href="#" data-lang="mn"><span class="ot-flag">ðŸ‡²ðŸ‡³</span>Mongolian</a>
-        <a href="#" data-lang="my"><span class="ot-flag">ðŸ‡²ðŸ‡²</span>Myanmar (Burmese)</a>
-        <a href="#" data-lang="ne"><span class="ot-flag">ðŸ‡³ðŸ‡µ</span>Nepali</a>
-        <a href="#" data-lang="no"><span class="ot-flag">ðŸ‡³ðŸ‡´</span>Norwegian</a>
-        <a href="#" data-lang="or"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Odia (Oriya)</a>
-        <a href="#" data-lang="om"><span class="ot-flag">ðŸ‡ªðŸ‡¹</span>Oromo</a>
-        <a href="#" data-lang="ps"><span class="ot-flag">ðŸ‡¦ðŸ‡«</span>Pashto</a>
-        <a href="#" data-lang="fa"><span class="ot-flag">ðŸ‡®ðŸ‡·</span>Persian</a>
-        <a href="#" data-lang="pl"><span class="ot-flag">ðŸ‡µðŸ‡±</span>Polish</a>
-        <a href="#" data-lang="pt"><span class="ot-flag">ðŸ‡§ðŸ‡·</span>Portuguese</a>
-        <a href="#" data-lang="pa"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Punjabi</a>
-        <a href="#" data-lang="qu"><span class="ot-flag">ðŸ‡µðŸ‡ª</span>Quechua</a>
-        <a href="#" data-lang="ro"><span class="ot-flag">ðŸ‡·ðŸ‡´</span>Romanian</a>
-        <a href="#" data-lang="ru"><span class="ot-flag">ðŸ‡·ðŸ‡º</span>Russian</a>
-        <a href="#" data-lang="sm"><span class="ot-flag">ðŸ‡¼ðŸ‡¸</span>Samoan</a>
-        <a href="#" data-lang="sa"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Sanskrit</a>
-        <a href="#" data-lang="gd"><span class="ot-flag">ðŸ´ó §ó ¢ó ³ó £ó ´ó ¿</span>Scots Gaelic</a>
-        <a href="#" data-lang="nso"><span class="ot-flag">ðŸ‡¿ðŸ‡¦</span>Sepedi</a>
-        <a href="#" data-lang="sr"><span class="ot-flag">ðŸ‡·ðŸ‡¸</span>Serbian</a>
-        <a href="#" data-lang="st"><span class="ot-flag">ðŸ‡±ðŸ‡¸</span>Sesotho</a>
-        <a href="#" data-lang="sn"><span class="ot-flag">ðŸ‡¿ðŸ‡¼</span>Shona</a>
-        <a href="#" data-lang="sd"><span class="ot-flag">ðŸ‡µðŸ‡°</span>Sindhi</a>
-        <a href="#" data-lang="si"><span class="ot-flag">ðŸ‡±ðŸ‡°</span>Sinhala</a>
-        <a href="#" data-lang="sk"><span class="ot-flag">ðŸ‡¸ðŸ‡°</span>Slovak</a>
-        <a href="#" data-lang="sl"><span class="ot-flag">ðŸ‡¸ðŸ‡®</span>Slovenian</a>
-        <a href="#" data-lang="so"><span class="ot-flag">ðŸ‡¸ðŸ‡´</span>Somali</a>
-        <a href="#" data-lang="es"><span class="ot-flag">ðŸ‡ªðŸ‡¸</span>Spanish</a>
-        <a href="#" data-lang="su"><span class="ot-flag">ðŸ‡®ðŸ‡©</span>Sundanese</a>
-        <a href="#" data-lang="sw"><span class="ot-flag">ðŸ‡°ðŸ‡ª</span>Swahili</a>
-        <a href="#" data-lang="sv"><span class="ot-flag">ðŸ‡¸ðŸ‡ª</span>Swedish</a>
-        <a href="#" data-lang="tg"><span class="ot-flag">ðŸ‡¹ðŸ‡¯</span>Tajik</a>
-        <a href="#" data-lang="ta"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Tamil</a>
-        <a href="#" data-lang="tt"><span class="ot-flag">ðŸ‡·ðŸ‡º</span>Tatar</a>
-        <a href="#" data-lang="te"><span class="ot-flag">ðŸ‡®ðŸ‡³</span>Telugu</a>
-        <a href="#" data-lang="th"><span class="ot-flag">ðŸ‡¹ðŸ‡­</span>Thai</a>
-        <a href="#" data-lang="ti"><span class="ot-flag">ðŸ‡ªðŸ‡·</span>Tigrinya</a>
-        <a href="#" data-lang="ts"><span class="ot-flag">ðŸ‡¿ðŸ‡¦</span>Tsonga</a>
-        <a href="#" data-lang="tr"><span class="ot-flag">ðŸ‡¹ðŸ‡·</span>Turkish</a>
-        <a href="#" data-lang="tk"><span class="ot-flag">ðŸ‡¹ðŸ‡²</span>Turkmen</a>
-        <a href="#" data-lang="ak"><span class="ot-flag">ðŸ‡¬ðŸ‡­</span>Twi</a>
-        <a href="#" data-lang="uk"><span class="ot-flag">ðŸ‡ºðŸ‡¦</span>Ukrainian</a>
-        <a href="#" data-lang="ur"><span class="ot-flag">ðŸ‡µðŸ‡°</span>Urdu</a>
-        <a href="#" data-lang="ug"><span class="ot-flag">ðŸ‡¨ðŸ‡³</span>Uyghur</a>
-        <a href="#" data-lang="uz"><span class="ot-flag">ðŸ‡ºðŸ‡¿</span>Uzbek</a>
-        <a href="#" data-lang="vi"><span class="ot-flag">ðŸ‡»ðŸ‡³</span>Vietnamese</a>
-        <a href="#" data-lang="cy"><span class="ot-flag">ðŸ´ó §ó ¢ó ·ó ¬ó ³ó ¿</span>Welsh</a>
-        <a href="#" data-lang="xh"><span class="ot-flag">ðŸ‡¿ðŸ‡¦</span>Xhosa</a>
-        <a href="#" data-lang="yi"><span class="ot-flag">ðŸŒ</span>Yiddish</a>
-        <a href="#" data-lang="yo"><span class="ot-flag">ðŸ‡³ðŸ‡¬</span>Yoruba</a>
-        <a href="#" data-lang="zu"><span class="ot-flag">ðŸ‡¿ðŸ‡¦</span>Zulu</a>
+        <a href="#" data-lang="en" class="ot-active"><span class="ot-flag">🇬🇧</span>English</a>
+        <a href="#" data-lang="af"><span class="ot-flag">🇿🇦</span>Afrikaans</a>
+        <a href="#" data-lang="sq"><span class="ot-flag">🇦🇱</span>Albanian</a>
+        <a href="#" data-lang="am"><span class="ot-flag">🇪🇹</span>Amharic</a>
+        <a href="#" data-lang="ar"><span class="ot-flag">🇸🇦</span>Arabic</a>
+        <a href="#" data-lang="hy"><span class="ot-flag">🇦🇲</span>Armenian</a>
+        <a href="#" data-lang="as"><span class="ot-flag">🇮🇳</span>Assamese</a>
+        <a href="#" data-lang="ay"><span class="ot-flag">🇧🇴</span>Aymara</a>
+        <a href="#" data-lang="az"><span class="ot-flag">🇦🇿</span>Azerbaijani</a>
+        <a href="#" data-lang="bm"><span class="ot-flag">🇲🇱</span>Bambara</a>
+        <a href="#" data-lang="eu"><span class="ot-flag">🏴</span>Basque</a>
+        <a href="#" data-lang="be"><span class="ot-flag">🇧🇾</span>Belarusian</a>
+        <a href="#" data-lang="bn"><span class="ot-flag">🇧🇩</span>Bengali</a>
+        <a href="#" data-lang="bho"><span class="ot-flag">🇮🇳</span>Bhojpuri</a>
+        <a href="#" data-lang="bs"><span class="ot-flag">🇧🇦</span>Bosnian</a>
+        <a href="#" data-lang="bg"><span class="ot-flag">🇧🇬</span>Bulgarian</a>
+        <a href="#" data-lang="ca"><span class="ot-flag">🏴</span>Catalan</a>
+        <a href="#" data-lang="ceb"><span class="ot-flag">🇵🇭</span>Cebuano</a>
+        <a href="#" data-lang="ny"><span class="ot-flag">🇲🇼</span>Chichewa</a>
+        <a href="#" data-lang="zh-CN"><span class="ot-flag">🇨🇳</span>Chinese (Simplified)</a>
+        <a href="#" data-lang="zh-TW"><span class="ot-flag">🇹🇼</span>Chinese (Traditional)</a>
+        <a href="#" data-lang="co"><span class="ot-flag">🇫🇷</span>Corsican</a>
+        <a href="#" data-lang="hr"><span class="ot-flag">🇭🇷</span>Croatian</a>
+        <a href="#" data-lang="cs"><span class="ot-flag">🇨🇿</span>Czech</a>
+        <a href="#" data-lang="da"><span class="ot-flag">🇩🇰</span>Danish</a>
+        <a href="#" data-lang="dv"><span class="ot-flag">🇲🇻</span>Dhivehi</a>
+        <a href="#" data-lang="doi"><span class="ot-flag">🇮🇳</span>Dogri</a>
+        <a href="#" data-lang="nl"><span class="ot-flag">🇳🇱</span>Dutch</a>
+        <a href="#" data-lang="eo"><span class="ot-flag">🌍</span>Esperanto</a>
+        <a href="#" data-lang="et"><span class="ot-flag">🇪🇪</span>Estonian</a>
+        <a href="#" data-lang="ee"><span class="ot-flag">🇬🇭</span>Ewe</a>
+        <a href="#" data-lang="tl"><span class="ot-flag">🇵🇭</span>Filipino</a>
+        <a href="#" data-lang="fi"><span class="ot-flag">🇫🇮</span>Finnish</a>
+        <a href="#" data-lang="fr"><span class="ot-flag">🇫🇷</span>French</a>
+        <a href="#" data-lang="fy"><span class="ot-flag">🇳🇱</span>Frisian</a>
+        <a href="#" data-lang="gl"><span class="ot-flag">🇪🇸</span>Galician</a>
+        <a href="#" data-lang="ka"><span class="ot-flag">🇬🇪</span>Georgian</a>
+        <a href="#" data-lang="de"><span class="ot-flag">🇩🇪</span>German</a>
+        <a href="#" data-lang="el"><span class="ot-flag">🇬🇷</span>Greek</a>
+        <a href="#" data-lang="gn"><span class="ot-flag">🇵🇾</span>Guarani</a>
+        <a href="#" data-lang="gu"><span class="ot-flag">🇮🇳</span>Gujarati</a>
+        <a href="#" data-lang="ht"><span class="ot-flag">🇭🇹</span>Haitian Creole</a>
+        <a href="#" data-lang="ha"><span class="ot-flag">🇳🇬</span>Hausa</a>
+        <a href="#" data-lang="haw"><span class="ot-flag">🇺🇸</span>Hawaiian</a>
+        <a href="#" data-lang="iw"><span class="ot-flag">🇮🇱</span>Hebrew</a>
+        <a href="#" data-lang="hi"><span class="ot-flag">🇮🇳</span>Hindi</a>
+        <a href="#" data-lang="hmn"><span class="ot-flag">🌏</span>Hmong</a>
+        <a href="#" data-lang="hu"><span class="ot-flag">🇭🇺</span>Hungarian</a>
+        <a href="#" data-lang="is"><span class="ot-flag">🇮🇸</span>Icelandic</a>
+        <a href="#" data-lang="ig"><span class="ot-flag">🇳🇬</span>Igbo</a>
+        <a href="#" data-lang="ilo"><span class="ot-flag">🇵🇭</span>Ilocano</a>
+        <a href="#" data-lang="id"><span class="ot-flag">🇮🇩</span>Indonesian</a>
+        <a href="#" data-lang="ga"><span class="ot-flag">🇮🇪</span>Irish</a>
+        <a href="#" data-lang="it"><span class="ot-flag">🇮🇹</span>Italian</a>
+        <a href="#" data-lang="ja"><span class="ot-flag">🇯🇵</span>Japanese</a>
+        <a href="#" data-lang="jw"><span class="ot-flag">🇮🇩</span>Javanese</a>
+        <a href="#" data-lang="kn"><span class="ot-flag">🇮🇳</span>Kannada</a>
+        <a href="#" data-lang="kk"><span class="ot-flag">🇰🇿</span>Kazakh</a>
+        <a href="#" data-lang="km"><span class="ot-flag">🇰🇭</span>Khmer</a>
+        <a href="#" data-lang="rw"><span class="ot-flag">🇷🇼</span>Kinyarwanda</a>
+        <a href="#" data-lang="gom"><span class="ot-flag">🇮🇳</span>Konkani</a>
+        <a href="#" data-lang="ko"><span class="ot-flag">🇰🇷</span>Korean</a>
+        <a href="#" data-lang="kri"><span class="ot-flag">🇸🇱</span>Krio</a>
+        <a href="#" data-lang="ku"><span class="ot-flag">🌍</span>Kurdish (Kurmanji)</a>
+        <a href="#" data-lang="ckb"><span class="ot-flag">🌍</span>Kurdish (Sorani)</a>
+        <a href="#" data-lang="ky"><span class="ot-flag">🇰🇬</span>Kyrgyz</a>
+        <a href="#" data-lang="lo"><span class="ot-flag">🇱🇦</span>Lao</a>
+        <a href="#" data-lang="la"><span class="ot-flag">🌍</span>Latin</a>
+        <a href="#" data-lang="lv"><span class="ot-flag">🇱🇻</span>Latvian</a>
+        <a href="#" data-lang="ln"><span class="ot-flag">🇨🇩</span>Lingala</a>
+        <a href="#" data-lang="lt"><span class="ot-flag">🇱🇹</span>Lithuanian</a>
+        <a href="#" data-lang="lg"><span class="ot-flag">🇺🇬</span>Luganda</a>
+        <a href="#" data-lang="lb"><span class="ot-flag">🇱🇺</span>Luxembourgish</a>
+        <a href="#" data-lang="mk"><span class="ot-flag">🇲🇰</span>Macedonian</a>
+        <a href="#" data-lang="mai"><span class="ot-flag">🇮🇳</span>Maithili</a>
+        <a href="#" data-lang="mg"><span class="ot-flag">🇲🇬</span>Malagasy</a>
+        <a href="#" data-lang="ms"><span class="ot-flag">🇲🇾</span>Malay</a>
+        <a href="#" data-lang="ml"><span class="ot-flag">🇮🇳</span>Malayalam</a>
+        <a href="#" data-lang="mt"><span class="ot-flag">🇲🇹</span>Maltese</a>
+        <a href="#" data-lang="mi"><span class="ot-flag">🇳🇿</span>Maori</a>
+        <a href="#" data-lang="mr"><span class="ot-flag">🇮🇳</span>Marathi</a>
+        <a href="#" data-lang="mni-Mtei"><span class="ot-flag">🇮🇳</span>Meitei (Manipuri)</a>
+        <a href="#" data-lang="lus"><span class="ot-flag">🇮🇳</span>Mizo</a>
+        <a href="#" data-lang="mn"><span class="ot-flag">🇲🇳</span>Mongolian</a>
+        <a href="#" data-lang="my"><span class="ot-flag">🇲🇲</span>Myanmar (Burmese)</a>
+        <a href="#" data-lang="ne"><span class="ot-flag">🇳🇵</span>Nepali</a>
+        <a href="#" data-lang="no"><span class="ot-flag">🇳🇴</span>Norwegian</a>
+        <a href="#" data-lang="or"><span class="ot-flag">🇮🇳</span>Odia (Oriya)</a>
+        <a href="#" data-lang="om"><span class="ot-flag">🇪🇹</span>Oromo</a>
+        <a href="#" data-lang="ps"><span class="ot-flag">🇦🇫</span>Pashto</a>
+        <a href="#" data-lang="fa"><span class="ot-flag">🇮🇷</span>Persian</a>
+        <a href="#" data-lang="pl"><span class="ot-flag">🇵🇱</span>Polish</a>
+        <a href="#" data-lang="pt"><span class="ot-flag">🇧🇷</span>Portuguese</a>
+        <a href="#" data-lang="pa"><span class="ot-flag">🇮🇳</span>Punjabi</a>
+        <a href="#" data-lang="qu"><span class="ot-flag">🇵🇪</span>Quechua</a>
+        <a href="#" data-lang="ro"><span class="ot-flag">🇷🇴</span>Romanian</a>
+        <a href="#" data-lang="ru"><span class="ot-flag">🇷🇺</span>Russian</a>
+        <a href="#" data-lang="sm"><span class="ot-flag">🇼🇸</span>Samoan</a>
+        <a href="#" data-lang="sa"><span class="ot-flag">🇮🇳</span>Sanskrit</a>
+        <a href="#" data-lang="gd"><span class="ot-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>Scots Gaelic</a>
+        <a href="#" data-lang="nso"><span class="ot-flag">🇿🇦</span>Sepedi</a>
+        <a href="#" data-lang="sr"><span class="ot-flag">🇷🇸</span>Serbian</a>
+        <a href="#" data-lang="st"><span class="ot-flag">🇱🇸</span>Sesotho</a>
+        <a href="#" data-lang="sn"><span class="ot-flag">🇿🇼</span>Shona</a>
+        <a href="#" data-lang="sd"><span class="ot-flag">🇵🇰</span>Sindhi</a>
+        <a href="#" data-lang="si"><span class="ot-flag">🇱🇰</span>Sinhala</a>
+        <a href="#" data-lang="sk"><span class="ot-flag">🇸🇰</span>Slovak</a>
+        <a href="#" data-lang="sl"><span class="ot-flag">🇸🇮</span>Slovenian</a>
+        <a href="#" data-lang="so"><span class="ot-flag">🇸🇴</span>Somali</a>
+        <a href="#" data-lang="es"><span class="ot-flag">🇪🇸</span>Spanish</a>
+        <a href="#" data-lang="su"><span class="ot-flag">🇮🇩</span>Sundanese</a>
+        <a href="#" data-lang="sw"><span class="ot-flag">🇰🇪</span>Swahili</a>
+        <a href="#" data-lang="sv"><span class="ot-flag">🇸🇪</span>Swedish</a>
+        <a href="#" data-lang="tg"><span class="ot-flag">🇹🇯</span>Tajik</a>
+        <a href="#" data-lang="ta"><span class="ot-flag">🇮🇳</span>Tamil</a>
+        <a href="#" data-lang="tt"><span class="ot-flag">🇷🇺</span>Tatar</a>
+        <a href="#" data-lang="te"><span class="ot-flag">🇮🇳</span>Telugu</a>
+        <a href="#" data-lang="th"><span class="ot-flag">🇹🇭</span>Thai</a>
+        <a href="#" data-lang="ti"><span class="ot-flag">🇪🇷</span>Tigrinya</a>
+        <a href="#" data-lang="ts"><span class="ot-flag">🇿🇦</span>Tsonga</a>
+        <a href="#" data-lang="tr"><span class="ot-flag">🇹🇷</span>Turkish</a>
+        <a href="#" data-lang="tk"><span class="ot-flag">🇹🇲</span>Turkmen</a>
+        <a href="#" data-lang="ak"><span class="ot-flag">🇬🇭</span>Twi</a>
+        <a href="#" data-lang="uk"><span class="ot-flag">🇺🇦</span>Ukrainian</a>
+        <a href="#" data-lang="ur"><span class="ot-flag">🇵🇰</span>Urdu</a>
+        <a href="#" data-lang="ug"><span class="ot-flag">🇨🇳</span>Uyghur</a>
+        <a href="#" data-lang="uz"><span class="ot-flag">🇺🇿</span>Uzbek</a>
+        <a href="#" data-lang="vi"><span class="ot-flag">🇻🇳</span>Vietnamese</a>
+        <a href="#" data-lang="cy"><span class="ot-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span>Welsh</a>
+        <a href="#" data-lang="xh"><span class="ot-flag">🇿🇦</span>Xhosa</a>
+        <a href="#" data-lang="yi"><span class="ot-flag">🌍</span>Yiddish</a>
+        <a href="#" data-lang="yo"><span class="ot-flag">🇳🇬</span>Yoruba</a>
+        <a href="#" data-lang="zu"><span class="ot-flag">🇿🇦</span>Zulu</a>
     </div>
 </div>
 
@@ -453,42 +608,42 @@ function googleTranslateElementInit() {
 <script>
 (function () {
     var langNames = {
-        'en':'EN â€¢ English','af':'AF â€¢ Afrikaans','sq':'SQ â€¢ Albanian','am':'AM â€¢ Amharic',
-        'ar':'AR â€¢ Arabic','hy':'HY â€¢ Armenian','as':'AS â€¢ Assamese','ay':'AY â€¢ Aymara',
-        'az':'AZ â€¢ Azerbaijani','bm':'BM â€¢ Bambara','eu':'EU â€¢ Basque','be':'BE â€¢ Belarusian',
-        'bn':'BN â€¢ Bengali','bho':'BHO â€¢ Bhojpuri','bs':'BS â€¢ Bosnian','bg':'BG â€¢ Bulgarian',
-        'ca':'CA â€¢ Catalan','ceb':'CEB â€¢ Cebuano','ny':'NY â€¢ Chichewa',
-        'zh-CN':'ZH â€¢ Chinese (Simplified)','zh-TW':'ZH â€¢ Chinese (Traditional)',
-        'co':'CO â€¢ Corsican','hr':'HR â€¢ Croatian','cs':'CS â€¢ Czech','da':'DA â€¢ Danish',
-        'dv':'DV â€¢ Dhivehi','doi':'DOI â€¢ Dogri','nl':'NL â€¢ Dutch','eo':'EO â€¢ Esperanto',
-        'et':'ET â€¢ Estonian','ee':'EE â€¢ Ewe','tl':'TL â€¢ Filipino','fi':'FI â€¢ Finnish',
-        'fr':'FR â€¢ French','fy':'FY â€¢ Frisian','gl':'GL â€¢ Galician','ka':'KA â€¢ Georgian',
-        'de':'DE â€¢ German','el':'EL â€¢ Greek','gn':'GN â€¢ Guarani','gu':'GU â€¢ Gujarati',
-        'ht':'HT â€¢ Haitian Creole','ha':'HA â€¢ Hausa','haw':'HAW â€¢ Hawaiian',
-        'iw':'IW â€¢ Hebrew','hi':'HI â€¢ Hindi','hmn':'HMN â€¢ Hmong','hu':'HU â€¢ Hungarian',
-        'is':'IS â€¢ Icelandic','ig':'IG â€¢ Igbo','ilo':'ILO â€¢ Ilocano','id':'ID â€¢ Indonesian',
-        'ga':'GA â€¢ Irish','it':'IT â€¢ Italian','ja':'JA â€¢ Japanese','jw':'JW â€¢ Javanese',
-        'kn':'KN â€¢ Kannada','kk':'KK â€¢ Kazakh','km':'KM â€¢ Khmer','rw':'RW â€¢ Kinyarwanda',
-        'gom':'GOM â€¢ Konkani','ko':'KO â€¢ Korean','kri':'KRI â€¢ Krio',
-        'ku':'KU â€¢ Kurdish (Kurmanji)','ckb':'CKB â€¢ Kurdish (Sorani)','ky':'KY â€¢ Kyrgyz',
-        'lo':'LO â€¢ Lao','la':'LA â€¢ Latin','lv':'LV â€¢ Latvian','ln':'LN â€¢ Lingala',
-        'lt':'LT â€¢ Lithuanian','lg':'LG â€¢ Luganda','lb':'LB â€¢ Luxembourgish',
-        'mk':'MK â€¢ Macedonian','mai':'MAI â€¢ Maithili','mg':'MG â€¢ Malagasy',
-        'ms':'MS â€¢ Malay','ml':'ML â€¢ Malayalam','mt':'MT â€¢ Maltese','mi':'MI â€¢ Maori',
-        'mr':'MR â€¢ Marathi','mni-Mtei':'MNI â€¢ Meitei (Manipuri)','lus':'LUS â€¢ Mizo',
-        'mn':'MN â€¢ Mongolian','my':'MY â€¢ Myanmar','ne':'NE â€¢ Nepali','no':'NO â€¢ Norwegian',
-        'or':'OR â€¢ Odia','om':'OM â€¢ Oromo','ps':'PS â€¢ Pashto','fa':'FA â€¢ Persian',
-        'pl':'PL â€¢ Polish','pt':'PT â€¢ Portuguese','pa':'PA â€¢ Punjabi','qu':'QU â€¢ Quechua',
-        'ro':'RO â€¢ Romanian','ru':'RU â€¢ Russian','sm':'SM â€¢ Samoan','sa':'SA â€¢ Sanskrit',
-        'gd':'GD â€¢ Scots Gaelic','nso':'NSO â€¢ Sepedi','sr':'SR â€¢ Serbian',
-        'st':'ST â€¢ Sesotho','sn':'SN â€¢ Shona','sd':'SD â€¢ Sindhi','si':'SI â€¢ Sinhala',
-        'sk':'SK â€¢ Slovak','sl':'SL â€¢ Slovenian','so':'SO â€¢ Somali','es':'ES â€¢ Spanish',
-        'su':'SU â€¢ Sundanese','sw':'SW â€¢ Swahili','sv':'SV â€¢ Swedish','tg':'TG â€¢ Tajik',
-        'ta':'TA â€¢ Tamil','tt':'TT â€¢ Tatar','te':'TE â€¢ Telugu','th':'TH â€¢ Thai',
-        'ti':'TI â€¢ Tigrinya','ts':'TS â€¢ Tsonga','tr':'TR â€¢ Turkish','tk':'TK â€¢ Turkmen',
-        'ak':'AK â€¢ Twi','uk':'UK â€¢ Ukrainian','ur':'UR â€¢ Urdu','ug':'UG â€¢ Uyghur',
-        'uz':'UZ â€¢ Uzbek','vi':'VI â€¢ Vietnamese','cy':'CY â€¢ Welsh','xh':'XH â€¢ Xhosa',
-        'yi':'YI â€¢ Yiddish','yo':'YO â€¢ Yoruba','zu':'ZU â€¢ Zulu'
+        'en':'EN • English','af':'AF • Afrikaans','sq':'SQ • Albanian','am':'AM • Amharic',
+        'ar':'AR • Arabic','hy':'HY • Armenian','as':'AS • Assamese','ay':'AY • Aymara',
+        'az':'AZ • Azerbaijani','bm':'BM • Bambara','eu':'EU • Basque','be':'BE • Belarusian',
+        'bn':'BN • Bengali','bho':'BHO • Bhojpuri','bs':'BS • Bosnian','bg':'BG • Bulgarian',
+        'ca':'CA • Catalan','ceb':'CEB • Cebuano','ny':'NY • Chichewa',
+        'zh-CN':'ZH • Chinese (Simplified)','zh-TW':'ZH • Chinese (Traditional)',
+        'co':'CO • Corsican','hr':'HR • Croatian','cs':'CS • Czech','da':'DA • Danish',
+        'dv':'DV • Dhivehi','doi':'DOI • Dogri','nl':'NL • Dutch','eo':'EO • Esperanto',
+        'et':'ET • Estonian','ee':'EE • Ewe','tl':'TL • Filipino','fi':'FI • Finnish',
+        'fr':'FR • French','fy':'FY • Frisian','gl':'GL • Galician','ka':'KA • Georgian',
+        'de':'DE • German','el':'EL • Greek','gn':'GN • Guarani','gu':'GU • Gujarati',
+        'ht':'HT • Haitian Creole','ha':'HA • Hausa','haw':'HAW • Hawaiian',
+        'iw':'IW • Hebrew','hi':'HI • Hindi','hmn':'HMN • Hmong','hu':'HU • Hungarian',
+        'is':'IS • Icelandic','ig':'IG • Igbo','ilo':'ILO • Ilocano','id':'ID • Indonesian',
+        'ga':'GA • Irish','it':'IT • Italian','ja':'JA • Japanese','jw':'JW • Javanese',
+        'kn':'KN • Kannada','kk':'KK • Kazakh','km':'KM • Khmer','rw':'RW • Kinyarwanda',
+        'gom':'GOM • Konkani','ko':'KO • Korean','kri':'KRI • Krio',
+        'ku':'KU • Kurdish (Kurmanji)','ckb':'CKB • Kurdish (Sorani)','ky':'KY • Kyrgyz',
+        'lo':'LO • Lao','la':'LA • Latin','lv':'LV • Latvian','ln':'LN • Lingala',
+        'lt':'LT • Lithuanian','lg':'LG • Luganda','lb':'LB • Luxembourgish',
+        'mk':'MK • Macedonian','mai':'MAI • Maithili','mg':'MG • Malagasy',
+        'ms':'MS • Malay','ml':'ML • Malayalam','mt':'MT • Maltese','mi':'MI • Maori',
+        'mr':'MR • Marathi','mni-Mtei':'MNI • Meitei (Manipuri)','lus':'LUS • Mizo',
+        'mn':'MN • Mongolian','my':'MY • Myanmar','ne':'NE • Nepali','no':'NO • Norwegian',
+        'or':'OR • Odia','om':'OM • Oromo','ps':'PS • Pashto','fa':'FA • Persian',
+        'pl':'PL • Polish','pt':'PT • Portuguese','pa':'PA • Punjabi','qu':'QU • Quechua',
+        'ro':'RO • Romanian','ru':'RU • Russian','sm':'SM • Samoan','sa':'SA • Sanskrit',
+        'gd':'GD • Scots Gaelic','nso':'NSO • Sepedi','sr':'SR • Serbian',
+        'st':'ST • Sesotho','sn':'SN • Shona','sd':'SD • Sindhi','si':'SI • Sinhala',
+        'sk':'SK • Slovak','sl':'SL • Slovenian','so':'SO • Somali','es':'ES • Spanish',
+        'su':'SU • Sundanese','sw':'SW • Swahili','sv':'SV • Swedish','tg':'TG • Tajik',
+        'ta':'TA • Tamil','tt':'TT • Tatar','te':'TE • Telugu','th':'TH • Thai',
+        'ti':'TI • Tigrinya','ts':'TS • Tsonga','tr':'TR • Turkish','tk':'TK • Turkmen',
+        'ak':'AK • Twi','uk':'UK • Ukrainian','ur':'UR • Urdu','ug':'UG • Uyghur',
+        'uz':'UZ • Uzbek','vi':'VI • Vietnamese','cy':'CY • Welsh','xh':'XH • Xhosa',
+        'yi':'YI • Yiddish','yo':'YO • Yoruba','zu':'ZU • Zulu'
     };
 
     var bar = document.getElementById('ot-lang-bar');
@@ -619,9 +774,9 @@ Our Priority.</a></span></div></div><div class="elementor-element elementor-elem
 <div class="elementor-widget-container">
 <div class="elementor-button-wrapper"> <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="{{ url('/track-now') }}"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon"> <i aria-hidden="true" class="fas fa-shipping-fast"></i> </span> <span class="elementor-button-text">Track now</span> </span> </a></div></div></div></div></div></div></section></div></div></section></div></div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ══════════════════════════════════════
      BACK TO TOP BUTTON
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+══════════════════════════════════════ -->
 <style>
 #ot-back-to-top {
     position: fixed;

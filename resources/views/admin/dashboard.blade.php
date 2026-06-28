@@ -5,7 +5,7 @@
 
 /* Welcome Banner */
 .dash-welcome {
-    background: linear-gradient(135deg, #0B3D91 0%, #062060 60%, #0d47a1 100%);
+    background: linear-gradient(135deg, #1B5E20 0%, #0D2B1E 60%, #2E7D32 100%);
     border-radius: 16px;
     padding: 28px 32px;
     margin-bottom: 28px;
@@ -58,7 +58,7 @@
     position: relative;
     z-index: 1;
 }
-.dash-welcome-meta i { color: #90caf9; font-size: 1rem; }
+.dash-welcome-meta i { color: #a5d6a7; font-size: 1rem; }
 
 /* Stat Cards */
 .stats-grid {
@@ -87,7 +87,7 @@
     width: 4px; height: 100%;
     border-radius: 14px 0 0 14px;
 }
-.stat-card.c-total::after  { background: #0B3D91; }
+.stat-card.c-total::after  { background: #1B5E20; }
 .stat-card.c-transit::after { background: #f59e0b; }
 .stat-card.c-delivered::after { background: #16a34a; }
 .stat-card.c-booked::after { background: #e53e3e; }
@@ -100,7 +100,7 @@
     font-size: 1.4rem;
     flex-shrink: 0;
 }
-.stat-icon.s-total    { background: #eff6ff; color: #0B3D91; }
+.stat-icon.s-total    { background: #eff6ff; color: #1B5E20; }
 .stat-icon.s-transit  { background: #fffbeb; color: #d97706; }
 .stat-icon.s-delivered{ background: #f0fdf4; color: #16a34a; }
 .stat-icon.s-booked   { background: #fff5f5; color: #e53e3e; }
@@ -152,7 +152,7 @@
 }
 .action-btn i { font-size: 1.4rem; }
 .action-btn:hover {
-    background: linear-gradient(135deg, #0B3D91, #1565c0);
+    background: linear-gradient(135deg, #1B5E20, #1565c0);
     color: #fff;
     border-color: transparent;
     transform: translateY(-2px);
@@ -201,7 +201,7 @@
     font-family: 'Courier New', monospace;
     font-weight: 700;
     font-size: .8rem;
-    color: #0B3D91;
+    color: #1B5E20;
     background: #eff6ff;
     padding: 3px 8px;
     border-radius: 5px;

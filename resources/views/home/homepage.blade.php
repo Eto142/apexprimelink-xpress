@@ -1,4 +1,4 @@
-﻿@include('partials.header')
+@include('partials.header')
 <div data-elementor-type="wp-page" data-elementor-id="6" class="elementor elementor-6" data-elementor-post-type="page">
 <section class="elementor-section elementor-top-section elementor-element elementor-element-57cd224e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="57cd224e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_scale_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;],&quot;background_motion_fx_scale_direction&quot;:&quot;in-out-in&quot;,&quot;background_motion_fx_scale_range&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:&quot;21&quot;,&quot;end&quot;:&quot;76&quot;}},&quot;background_motion_fx_scale_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]}}">
 <style>
@@ -41,11 +41,11 @@
 <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2f25bc38" data-id="2f25bc38" data-element_type="column">
 <div class="elementor-widget-wrap elementor-element-populated">
 <div class="elementor-element elementor-element-365bfa4a elementor-invisible elementor-widget elementor-widget-heading" data-id="365bfa4a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="heading.default">
-<div class="elementor-widget-container"> <h1 class="elementor-heading-title elementor-size-default"> YOUR CARGO. OUR COMMITMENT. DELIVERED WORLDWIDE. </h1></div></div><div class="elementor-element elementor-element-6614140f elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6614140f" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container"> <h1 class="elementor-heading-title elementor-size-default"> From Origin to Destination, We've Got It Covered. </h1></div></div><div class="elementor-element elementor-element-6614140f elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6614140f" data-element_type="widget" data-widget_type="divider.default">
 <div class="elementor-widget-container">
 <style>.elementor-widget-divider{--divider-border-style:none;--divider-border-width:1px;--divider-color:#0c0d0e;--divider-icon-size:20px;--divider-element-spacing:10px;--divider-pattern-height:24px;--divider-pattern-size:20px;--divider-pattern-url:none;--divider-pattern-repeat:repeat-x}.elementor-widget-divider .elementor-divider{display:flex}.elementor-widget-divider .elementor-divider__text{font-size:15px;line-height:1;max-width:95%}.elementor-widget-divider .elementor-divider__element{margin:0 var(--divider-element-spacing);flex-shrink:0}.elementor-widget-divider .elementor-icon{font-size:var(--divider-icon-size)}.elementor-widget-divider .elementor-divider-separator{display:flex;margin:0;direction:ltr}.elementor-widget-divider--view-line_icon .elementor-divider-separator,.elementor-widget-divider--view-line_text .elementor-divider-separator{align-items:center}.elementor-widget-divider--view-line_icon .elementor-divider-separator:after,.elementor-widget-divider--view-line_icon .elementor-divider-separator:before,.elementor-widget-divider--view-line_text .elementor-divider-separator:after,.elementor-widget-divider--view-line_text .elementor-divider-separator:before{display:block;content:"";border-block-end:0;flex-grow:1;border-block-start:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--element-align-left .elementor-divider .elementor-divider-separator>.elementor-divider__svg:first-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-left .elementor-divider-separator:before{content:none}.elementor-widget-divider--element-align-left .elementor-divider__element{margin-left:0}.elementor-widget-divider--element-align-right .elementor-divider .elementor-divider-separator>.elementor-divider__svg:last-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-right .elementor-divider-separator:after{content:none}.elementor-widget-divider--element-align-right .elementor-divider__element{margin-right:0}.elementor-widget-divider--element-align-start .elementor-divider .elementor-divider-separator>.elementor-divider__svg:first-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-start .elementor-divider-separator:before{content:none}.elementor-widget-divider--element-align-start .elementor-divider__element{margin-inline-start:0}.elementor-widget-divider--element-align-end .elementor-divider .elementor-divider-separator>.elementor-divider__svg:last-of-type{flex-grow:0;flex-shrink:100}.elementor-widget-divider--element-align-end .elementor-divider-separator:after{content:none}.elementor-widget-divider--element-align-end .elementor-divider__element{margin-inline-end:0}.elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator{border-block-start:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-widget-divider--separator-type-pattern{--divider-border-style:none}.elementor-widget-divider--separator-type-pattern.elementor-widget-divider--view-line .elementor-divider-separator,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:after,.elementor-widget-divider--separator-type-pattern:not(.elementor-widget-divider--view-line) .elementor-divider-separator:before,.elementor-widget-divider--separator-type-pattern:not([class*=elementor-widget-divider--view]) .elementor-divider-separator{width:100%;min-height:var(--divider-pattern-height);-webkit-mask-size:var(--divider-pattern-size) 100%;mask-size:var(--divider-pattern-size) 100%;-webkit-mask-repeat:var(--divider-pattern-repeat);mask-repeat:var(--divider-pattern-repeat);background-color:var(--divider-color);-webkit-mask-image:var(--divider-pattern-url);mask-image:var(--divider-pattern-url)}.elementor-widget-divider--no-spacing{--divider-pattern-size:auto}.elementor-widget-divider--bg-round{--divider-pattern-repeat:round}.rtl .elementor-widget-divider .elementor-divider__text{direction:rtl}.e-con-inner>.elementor-widget-divider,.e-con>.elementor-widget-divider{width:var(--container-widget-width,100%);--flex-grow:var(--container-widget-flex-grow)}</style>		<div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div></div></div><div class="elementor-element elementor-element-3d3cd8cf elementor-hidden-mobile elementor-widget elementor-widget-heading" data-id="3d3cd8cf" data-element_type="widget" data-widget_type="heading.default">
 <div class="elementor-widget-container">
-<div class="elementor-heading-title elementor-size-default">At apexprimelink-xpress, we move more than cargo we move businesses forward. With a global network spanning air, ocean, road, and rail, we deliver end-to-end logistics solutions built on precision, speed, and trust. From time-critical shipments to complex supply chain management, our expert teams work around the clock to ensure your freight arrives safely, on time, every time. Partner with us and experience logistics without limits.</div></div></div><div class="elementor-element elementor-element-5a0e858b elementor-invisible elementor-widget elementor-widget-button" data-id="5a0e858b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInDown&quot;}" data-widget_type="button.default">
+<div class="elementor-heading-title elementor-size-default">Global logistics built on trust, precision, and performance. At ApexPrimeLink-Xpress, we provide seamless freight and supply chain solutions across air, ocean, road, and rail. Backed by industry expertise and a worldwide network, we simplify complex logistics, ensuring every shipment is handled with care and delivered on time. Wherever your business operates, we're committed to keeping your supply chain connected.</div></div></div><div class="elementor-element elementor-element-5a0e858b elementor-invisible elementor-widget elementor-widget-button" data-id="5a0e858b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInDown&quot;}" data-widget_type="button.default">
 <div class="elementor-widget-container">
 <div class="elementor-button-wrapper"> <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="{{ url('/track-now') }}"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon"> <i aria-hidden="true" class="fas fa-map-marker-alt"></i> </span> <span class="elementor-button-text">Track Shipment</span> </span> </a></div></div></div></div></div><div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-48760520" data-id="48760520" data-element_type="column">
 <div class="elementor-widget-wrap"></div></div></div></section>
@@ -100,7 +100,7 @@
 <div class="elementor-widget-container">
 <div class="elementor-button-wrapper"> <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="{{ url('/contact') }}"> <span class="elementor-button-content-wrapper"> <span class="elementor-button-icon"> <i aria-hidden="true" class="fas fa-calendar-alt"></i> </span> <span class="elementor-button-text">Book Now</span> </span> </a></div></div></div></div></div></div></section></div></div></div></section>
 <!-- ===== STATS COUNTER STRIP ===== -->
-<section style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);padding:52px 0;">
+<section style="background:linear-gradient(135deg,#0D2B1E 0%,#132B1E 100%);padding:52px 0;">
     <style>
         .ot-stats-wrap{max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center;}
         @media(max-width:768px){.ot-stats-wrap{grid-template-columns:repeat(2,1fr);}}
@@ -365,7 +365,7 @@
         .ot-testimonials-wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
         .ot-testimonials-header{text-align:center;margin-bottom:50px;}
         .ot-testimonials-header h5{color:#f4a306;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
-        .ot-testimonials-header h2{font-size:32px;font-weight:700;color:#1a1a2e;margin-bottom:14px;}
+        .ot-testimonials-header h2{font-size:32px;font-weight:700;color:#0D2B1E;margin-bottom:14px;}
         .ot-testimonials-header .ot-divider{width:60px;height:3px;background:#f4a306;margin:0 auto;}
         .ot-testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
         @media(max-width:900px){.ot-testimonials-grid{grid-template-columns:1fr 1fr;}}
@@ -376,8 +376,8 @@
         .ot-testimonial-text{font-size:15px;color:#555;line-height:1.75;font-style:italic;flex:1;}
         .ot-testimonial-text::before{content:'\201C';font-size:48px;color:#f4a306;line-height:0;vertical-align:-18px;margin-right:4px;}
         .ot-testimonial-author{display:flex;align-items:center;gap:14px;margin-top:10px;}
-        .ot-testimonial-avatar{width:48px;height:48px;border-radius:50%;background:#1a1a2e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0;}
-        .ot-testimonial-name{font-weight:700;color:#1a1a2e;font-size:15px;}
+        .ot-testimonial-avatar{width:48px;height:48px;border-radius:50%;background:#0D2B1E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0;}
+        .ot-testimonial-name{font-weight:700;color:#0D2B1E;font-size:15px;}
         .ot-testimonial-role{font-size:13px;color:#f4a306;}
     </style>
     <div class="ot-testimonials-wrap">
@@ -482,7 +482,7 @@
 .ot-partners-heading h3 {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     font-weight: 800;
-    color: #1a1a2e;
+    color: #0D2B1E;
     margin: 0;
     line-height: 1.3;
 }
@@ -542,11 +542,11 @@
 .ot-wordmark.fedex     { background: linear-gradient(90deg, #4D148C 50%, #FF6600 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 24px; }
 .ot-wordmark.ups       { color: #351C15; font-size: 20px; }
 .ot-wordmark.maersk    { color: #42B0D5; font-size: 20px; font-weight: 700; }
-.ot-wordmark.msc       { color: #003087; font-size: 26px; letter-spacing: 3px; }
+.ot-wordmark.msc       { color: #2E7D32; font-size: 26px; letter-spacing: 3px; }
 .ot-wordmark.schenker  { color: #E00000; font-size: 18px; letter-spacing: 1px; }
 .ot-wordmark.kn        { color: #002D62; font-size: 20px; }
 .ot-wordmark.xpo       { color: #216BCC; font-size: 24px; letter-spacing: 1px; }
-.ot-wordmark.cma       { color: #003087; font-size: 18px; letter-spacing: 1px; }
+.ot-wordmark.cma       { color: #2E7D32; font-size: 18px; letter-spacing: 1px; }
 .ot-wordmark.ceva      { color: #E2001A; font-size: 22px; letter-spacing: 2px; }
 .ot-wordmark.dsv       { color: #E2001A; font-size: 26px; letter-spacing: 3px; }
 .ot-wordmark.geodis    { color: #F7A800; font-size: 19px; font-weight: 700; }
@@ -608,17 +608,17 @@
 <section style="background:linear-gradient(90deg,#f4a306 0%,#e8940a 100%);padding:60px 20px;text-align:center;">
     <style>
         .ot-cta-wrap{max-width:780px;margin:0 auto;}
-        .ot-cta-wrap h2{font-size:clamp(22px,4vw,36px);font-weight:800;color:#1a1a2e;margin:0 0 14px;line-height:1.25;}
+        .ot-cta-wrap h2{font-size:clamp(22px,4vw,36px);font-weight:800;color:#0D2B1E;margin:0 0 14px;line-height:1.25;}
         .ot-cta-wrap p{font-size:16px;color:rgba(26,26,46,0.8);margin:0 0 28px;line-height:1.6;}
-        .ot-cta-btn{display:inline-block;background:#1a1a2e;color:#f4a306;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:15px 36px;border-radius:4px;text-decoration:none;transition:background 0.3s,color 0.3s;}
-        .ot-cta-btn:hover{background:#fff;color:#1a1a2e;}
+        .ot-cta-btn{display:inline-block;background:#0D2B1E;color:#f4a306;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:15px 36px;border-radius:4px;text-decoration:none;transition:background 0.3s,color 0.3s;}
+        .ot-cta-btn:hover{background:#fff;color:#0D2B1E;}
     </style>
     <div class="ot-cta-wrap">
         <h2>Ready to Ship? Let Us Handle the Rest.</h2>
         <p>Get a free quote or track your shipment right now. Our logistics experts are available around the clock to assist you.</p>
         <a class="ot-cta-btn" href="{{ url('/contact') }}"><i class="fas fa-paper-plane" style="margin-right:8px;"></i>Get a Free Quote</a>
         &nbsp;&nbsp;
-        <a class="ot-cta-btn" href="{{ url('/track-now') }}" style="background:transparent;border:2px solid #1a1a2e;color:#1a1a2e;"><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i>Track Shipment</a>
+        <a class="ot-cta-btn" href="{{ url('/track-now') }}" style="background:transparent;border:2px solid #0D2B1E;color:#0D2B1E;"><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i>Track Shipment</a>
     </div>
 </section>
 

@@ -68,8 +68,8 @@
                 datasets: [{
                     label: 'Shipments',
                     data: [120, 150, 180, 200, 240, 280, 300],
-                    borderColor: '#003366',
-                    backgroundColor: 'rgba(0, 51, 102, 0.1)',
+                    borderColor: '#1B5E20',
+                    backgroundColor: 'rgba(27, 67, 50, 0.1)',
                     borderWidth: 2,
                     fill: true,
                     tension: 0.4
@@ -107,10 +107,10 @@
                 datasets: [{
                     data: [45, 25, 20, 10],
                     backgroundColor: [
-                        '#001f3f',
-                        '#003366',
-                        '#004080',
-                        '#0056b3'
+                        '#0D2B1E',
+                        '#1B5E20',
+                        '#1B5E20',
+                        '#2E7D32'
                     ],
                     borderWidth: 0
                 }]
