@@ -13,12 +13,7 @@ Route::middleware('web')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-        Route::get('/admin/change-password', [AuthController::class, 'showChangePassword'])
-        ->name('change.password');
-
-    Route::post('/admin/change-password', [AuthController::class, 'updatePassword'])
-        ->name('change.password.post');
-
+     
     // Protected routes
     Route::middleware('auth:admin')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
@@ -29,7 +24,13 @@ Route::middleware('web')->prefix('admin')->name('admin.')->group(function () {
 
         Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
         Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
-        
+       
+           Route::get('/admin/change-password', [AuthController::class, 'showChangePassword'])
+        ->name('change.password');
+
+    Route::post('/admin/change-password', [AuthController::class, 'updatePassword'])
+        ->name('change.password.post');
+
     });
 
 

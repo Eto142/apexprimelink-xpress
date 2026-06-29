@@ -43,22 +43,46 @@ class AuthController extends Controller
         return view('admin.change-password');
     }
 
+    // public function updatePassword(Request $request)
+    // {
+    //     $request->validate([
+    //         'current_password' => 'required',
+    //         'new_password' => 'required|min:8|confirmed',
+    //     ]);
+
+    //     $admin = Auth::user();
+
+    //     if (!Hash::check($request->current_password, $admin->password)) {
+    //         return back()->with('error', 'Current password is incorrect');
+    //     }
+
+    //     $admin->password = Hash::make($request->new_password);
+    //     $admin->save();
+
+    //     return back()->with('success', 'Password changed successfully');
+    // }
+
+
     public function updatePassword(Request $request)
-    {
-        $request->validate([
-            'current_password' => 'required',
-            'new_password' => 'required|min:8|confirmed',
-        ]);
+{
+    $request->validate([
+        'current_password' => 'required',
+        'new_password' => 'required|min:8|confirmed',
+    ]);
 
-        $admin = Auth::user();
+    $admin = Auth::guard('admin')->user();
 
-        if (!Hash::check($request->current_password, $admin->password)) {
-            return back()->with('error', 'Current password is incorrect');
-        }
-
-        $admin->password = Hash::make($request->new_password);
-        $admin->save();
-
-        return back()->with('success', 'Password changed successfully');
+    if (!$admin) {
+        return back()->with('error', 'You are not authenticated.');
     }
+
+    if (!Hash::check($request->current_password, $admin->password)) {
+        return back()->with('error', 'Current password is incorrect.');
+    }
+
+    $admin->password = Hash::make($request->new_password);
+    $admin->save();
+
+    return back()->with('success', 'Password changed successfully.');
+}
 }
