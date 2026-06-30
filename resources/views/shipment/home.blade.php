@@ -1093,7 +1093,7 @@
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};
-_smartsupp.key = '42e99fe7aa377dd725c35b383cfd4b2cb3264397';
+_smartsupp.key = '8b6914e19136a73bd34e7ffac91def94b3dc89d0';
 window.smartsupp||(function(d) {
   var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
   s=d.getElementsByTagName('script')[0];c=d.createElement('script');
